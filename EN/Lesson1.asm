@@ -743,21 +743,21 @@ No_Fix_0_DIVIDE:
     	pop    	eax                    		; let’s make sure to remove the value from the stack
 
 	; I decided to use 32-bit assembly, I'm still in the early stages of learning 64-bit assembly
-    	mov    eax, DWORD ptr [zFar]            ; for each value, we first save the lower 32-bit value to the stack 
-    	push    eax                    		; then the upper 32-bit value
-	mov    eax, DWORD ptr [zFar+4]            
-    	push    eax
-    	mov    eax, DWORD ptr [zNear]
+    	mov    eax, DWORD ptr [zFar+4]            ; for each value, we first save the upper 32-bit value to the stack 
+    	push    eax                    		; then the lower 32-bit value
+	mov    eax, DWORD ptr [zFar]            
     	push    eax
     	mov    eax, DWORD ptr [zNear+4]
-	push    eax
-    	mov    eax, DWORD ptr [aspect]
     	push    eax
+    	mov    eax, DWORD ptr [zNear]
+	push    eax
     	mov    eax, DWORD ptr [aspect+4]
     	push    eax
-    	mov    eax, DWORD ptr [fovy]
+    	mov    eax, DWORD ptr [aspect]
     	push    eax
     	mov    eax, DWORD ptr [fovy+4]
+    	push    eax
+    	mov    eax, DWORD ptr [fovy]
 	push    eax
     	call    gluPerspective                	; call the OpenGL function
 

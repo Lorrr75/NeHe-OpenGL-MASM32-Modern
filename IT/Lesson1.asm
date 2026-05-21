@@ -744,21 +744,21 @@ No_Fix_0_DIVIDE:
 	
 	
 	; ho deciso di utilizzare l'assembly a 32 bit, per i 64 bit sono ancora il fase iniziale di studio
-	mov	eax, DWORD ptr [zFar]			; per ogni valore salviamo sullo stack prima il valore 32 bit basso 
-	push	eax					; poi quello alto
-	mov	eax, DWORD ptr [zFar+4]			
-	push	eax
-	mov	eax, DWORD ptr [zNear]
+	mov	eax, DWORD ptr [zFar+4]			; per ogni valore salviamo sullo stack prima il valore 32 bit alto 
+	push	eax					; poi quello basso
+	mov	eax, DWORD ptr [zFar]			
 	push	eax
 	mov	eax, DWORD ptr [zNear+4]
 	push	eax
-	mov	eax, DWORD ptr [aspect]
+	mov	eax, DWORD ptr [zNear]
 	push	eax
 	mov	eax, DWORD ptr [aspect+4]
 	push	eax
-	mov	eax, DWORD ptr [fovy]
+	mov	eax, DWORD ptr [aspect]
 	push	eax
 	mov	eax, DWORD ptr [fovy+4]
+	push	eax
+	mov	eax, DWORD ptr [fovy]
 	push	eax
 	call	gluPerspective				; chiamiamo la funzione OpenGL
 
