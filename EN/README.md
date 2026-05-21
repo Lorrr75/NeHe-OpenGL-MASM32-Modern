@@ -1,6 +1,6 @@
-# Tutorial 1: OpenGL Foundations in MASM32 (English Version)
+# Tutorial: OpenGL Foundations in MASM32 (English Version)
 
-This folder contains the English version of the NeHe Tutorial 1 porting for **MASM32**. This project aims to bridge the gap between legacy graphics tutorials and modern Windows environments.
+This folder contains the English version of the NeHe Tutorial porting for **MASM32**. This project aims to bridge the gap between legacy graphics tutorials and modern Windows environments.
 
 ## 🚀 Key Improvements
 While the logic follows NeHe's original structure, several "under-the-hood" improvements were necessary:

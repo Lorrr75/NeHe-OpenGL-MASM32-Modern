@@ -1,4 +1,4 @@
-# Tutorial 1: Fondamenta di OpenGL in MASM32 (Versione Italiana)
+# Tutorial: Fondamenta di OpenGL in MASM32 (Versione Italiana)
 
 Benvenuti nel primo capitolo del porting dei tutorial di NeHe per l'ambiente **MASM32**. Questo codice non è solo una traduzione letterale dal C++, ma un adattamento ragionato per le moderne architetture Windows.
 
