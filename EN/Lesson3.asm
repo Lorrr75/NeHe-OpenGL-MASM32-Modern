@@ -46,7 +46,7 @@ dmScreenSettings    DEVMODE<>
 ; strings and error messages
 msg_Fullscreen  	db "Would you like to run in full-screen mode?", 0
 capt_Fullscreen 	db "Start in full-screen mode?", 0
-Title        		db "NeHe's First Polygon Tutorial", 0
+Title        		db "NeHe's Color Tutorial", 0
 szClassName    		db "OpenGL", 0
 szCGL_Register_Error 	db "Failed to register the window class.", 0
 szErrorCaption        	db "ERROR",0
@@ -811,15 +811,31 @@ DrawGLScene    	proc
 	call	glTranslatef			; move to the left and inwards			
 	
 	invoke	glBegin, GL_TRIANGLES		; Drawing using triangles
+		
+		MpushReal4 0.0			; Blue component				
+		MpushReal4 0.0			; Green component
+		MpushReal4 1.0			; Red component
+		call	glColor3f		; Set drawing color
+		
 		MpushReal4 0.0
 		MpushReal4 1.0
 		MpushReal4 0.0
 		call	glVertex3f		; top
 
+		MpushReal4 0.0			; Blue component				
+		MpushReal4 1.0			; Green component
+		MpushReal4 0.0			; Red component
+		call	glColor3f		; Set drawing color
+
 		MpushReal4 0.0
 		MpushReal4 -1.0
 		MpushReal4 -1.0
 		call	glVertex3f		; Bottom left
+
+		MpushReal4 1.0			; Blue component				
+		MpushReal4 0.0			; Green component
+		MpushReal4 0.0			; Red component
+		call	glColor3f		; Set drawing color
 
 		MpushReal4 0.0
 		MpushReal4 -1.0
@@ -835,6 +851,11 @@ DrawGLScene    	proc
 	call	glTranslatef			; Move 3 squares to the right		
 
 
+	MpushReal4 1.0				; Blue component				
+	MpushReal4 0.5				; Green component
+	MpushReal4 0.5				; Red component
+	call	glColor3f			; Set drawing color
+	
 	invoke	glBegin, GL_QUADS		; Draw a quadrilateral
 
 		MpushReal4 0.0
